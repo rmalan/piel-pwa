@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--Import Google Icon Font-->
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<!--Import materialize.css-->
+		<link
+			type="text/css"
+			rel="stylesheet"
+			href="css/materialize.min.css"
+			media="screen,projection"
+		/>
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="shortcut icon" href="images/favicon.ico" />
+
+		<title>PieL-PWA | Semua Tentang Premier League</title>
+	</head>
+
+	<body>
+		<nav class="purple darken-4">
+			<div class="nav-wrapper container">
+				<a href="#!" class="brand-logo">PieL</a>
+				<a href="#" data-target="mobile-demo" class="sidenav-trigger">
+					<i class="material-icons">menu</i>
+				</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Beranda</a></li>
+					<li><a href="tim.html">Tim</a></li>
+					<li><a href="klasemen.html">Klasemen</a></li>
+					<li><a href="favorit.html">Favorit</a></li>
+				</ul>
+
+				<ul class="sidenav" id="mobile-demo">
+					<li><a href="index.html">Beranda</a></li>
+					<li><a href="tim.html">Tim</a></li>
+					<li><a href="klasemen.html">Klasemen</a></li>
+					<li><a href="favorit.html">Favorit</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container" id="body-content">
+			<h1 class="center align">
+				Tim-Tim Premier League
+			</h1>
+			<div class="divider"></div>
+			<div class="row">
+				<div id="team-list-container" style="margin-top: 50px;">
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-57"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-57"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.arsenal.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Arsenal FC</a
+								>
+								<p class="">Founded: 1886</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-58"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/de/9/9f/Aston_Villa_logo.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-58"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.avfc.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Aston Villa FC</a
+								>
+								<p class="">Founded: 1872</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-61"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-61"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.chelseafc.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Chelsea FC</a
+								>
+								<p class="">Founded: 1905</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-62"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-62"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.evertonfc.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Everton FC</a
+								>
+								<p class="">Founded: 1878</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-64"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-64"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.liverpoolfc.tv"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Liverpool FC</a
+								>
+								<p class="">Founded: 1892</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-65"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-65"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="https://www.mancity.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Manchester City FC</a
+								>
+								<p class="">Founded: 1880</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-66"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-66"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.manutd.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Manchester United FC</a
+								>
+								<p class="">Founded: 1878</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-67"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-67"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.nufc.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Newcastle United FC</a
+								>
+								<p class="">Founded: 1881</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-68"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/8/8c/Norwich_City.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-68"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.canaries.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Norwich City FC</a
+								>
+								<p class="">Founded: 1902</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-73"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-73"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.tottenhamhotspur.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Tottenham Hotspur FC</a
+								>
+								<p class="">Founded: 1882</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-76"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-76"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.wolves.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Wolverhampton Wanderers FC</a
+								>
+								<p class="">Founded: 1877</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-328"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/6/62/Burnley_F.C._Logo.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-328"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.burnleyfootballclub.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Burnley FC</a
+								>
+								<p class="">Founded: 1881</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-338"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-338"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.lcfc.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Leicester City FC</a
+								>
+								<p class="">Founded: 1884</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-340"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-340"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.saintsfc.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Southampton FC</a
+								>
+								<p class="">Founded: 1885</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-346"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/e/e2/Watford.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-346"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.watfordfc.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Watford FC</a
+								>
+								<p class="">Founded: 1881</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-354"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/0/0c/Crystal_Palace_FC_logo.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-354"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.cpfc.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Crystal Palace FC</a
+								>
+								<p class="">Founded: 1905</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-356"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/9/9c/Sheffield_United_FC_logo.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-356"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.sufc.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Sheffield United FC</a
+								>
+								<p class="">Founded: -</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-397"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-397"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.seagulls.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>Brighton &amp; Hove Albion FC</a
+								>
+								<p class="">Founded: 1898</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-563"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-563"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.whufc.com"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>West Ham United FC</a
+								>
+								<p class="">Founded: 1895</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m6 l3">
+						<div class="card">
+							<div
+								class="card-image team--logo valign-wrapper"
+								id="crest-1044"
+							>
+								<img
+									src="https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg"
+								/>
+								<a
+									class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved"
+									id="bookmark-button-1044"
+								>
+									<i class="material-icons"
+										>bookmark_border</i
+									>
+								</a>
+							</div>
+							<div class="card-content team--content">
+								<a
+									href="http://www.afcb.co.uk"
+									class="card-title blue-text truncate"
+									target="_blank"
+									>AFC Bournemouth</a
+								>
+								<p class="">Founded: 1890</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="page-footer purple darken-4">
+			<div class="footer-copyright">
+				<div class="container">
+					2020 &#169; PieL
+					<a class="grey-text text-lighten-4 right" href="#!"
+						>GitHub</a
+					>
+				</div>
+			</div>
+		</footer>
+
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>

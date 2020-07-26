@@ -1,0 +1,55 @@
+@font-face {
+	font-family: "Rancho";
+	src: url(../fonts/Rancho-Regular.ttf);
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.brand-logo {
+	font-family: "Rancho", sans-serif;
+	padding: 0px;
+	white-space: nowrap;
+}
+
+h1 {
+	font-family: "Rancho", sans-serif;
+}
+
+.svg {
+	max-width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+table {
+	margin-top: 20px;
+}
+
+.competition--logo {
+	height: 300px;
+}
+
+.competition--logo > img,
+.team--logo > img {
+	padding: 30px;
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+}
+
+.competition--content,
+.team--content {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.team--logo {
+	height: 250px;
+}
