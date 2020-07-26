@@ -25,12 +25,14 @@ h1 {
 
 .svg {
 	max-width: 100%;
-	margin-top: 20px;
+	margin-top: 50px;
 	margin-bottom: 20px;
 }
 
-table {
-	margin-top: 20px;
+.standings-list,
+.teams-list {
+	margin-top: 50px;
+	margin-bottom: 20px;
 }
 
 .competition--logo {
@@ -52,4 +54,8 @@ table {
 
 .team--logo {
 	height: 250px;
+}
+
+.badge {
+	height: 25px;
 }
