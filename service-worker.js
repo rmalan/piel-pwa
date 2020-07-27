@@ -1,16 +1,19 @@
 const CACHE_NAME = "piel-pwa-v1";
 let urlsToCache = [
 	"/",
-	"/src/css/materialize.min.css",
-	"/src/css/style.css",
-	"/src/fonts/Rancho-Regular.ttf",
-	"/src/images/beranda.svg",
-	"/src/images/favicon.ico",
-	"/src/js/materialize.min.js",
-	"/src/js/main.js",
+	"/css/materialize.min.css",
+	"/css/style.css",
+	"/fonts/Rancho-Regular.ttf",
+	"/images/beranda.svg",
+	"/images/favicon.ico",
+	"/js/component/nav.js",
+	"/js/materialize.min.js",
+	"/js/main.js",
+	"/layouts/nav.html",
+	"/pages/beranda.html",
+	"/pages/tim.html",
+	"/pages/klasemen.html",
 	"/index.html",
-	"/tim.html",
-	"/klasemen.html",
 ];
 
 self.addEventListener("install", function (event) {
