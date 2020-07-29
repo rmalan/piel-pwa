@@ -4,47 +4,62 @@ let urlsToCache = [
 	"/css/materialize.min.css",
 	"/css/style.css",
 	"/fonts/Rancho-Regular.ttf",
+	"/images/icons/icon-96.png",
+	"/images/icons/icon-192.png",
+	"/images/icons/icon-512.png",
 	"/images/beranda.svg",
 	"/images/favicon.ico",
 	"/js/component/nav.js",
 	"/js/materialize.min.js",
 	"/js/main.js",
+	"/js/api.js",
 	"/layouts/nav.html",
 	"/pages/beranda.html",
 	"/pages/tim.html",
 	"/pages/klasemen.html",
 	"/index.html",
+	"/manifest.json",
 ];
 
 self.addEventListener("install", function (event) {
-	console.log("ServiceWorker: Menginstall..");
-
 	event.waitUntil(
 		caches.open(CACHE_NAME).then(function (cache) {
-			console.log("ServiceWorker: Membuka cache..");
 			return cache.addAll(urlsToCache);
 		})
 	);
 });
 
 self.addEventListener("fetch", function (event) {
-	event.respondWith(
-		caches.match(event.request).then(function (response) {
-			console.log("ServiceWorker: Menarik data: ", event.request.url);
+	let base_url = "https://api.football-data.org/v2/";
 
-			if (response) {
-				console.log(
-					"ServiceWorker: Gunakan aset dari cache: ",
-					response.url
-				);
-				return response;
-			}
+	if (event.request.url.indexOf(base_url) > -1) {
+		event.respondWith(
+			caches.open(CACHE_NAME).then(function (cache) {
+				return fetch(event.request).then(function (response) {
+					cache.put(event.request.url, response.clone());
+					return response;
+				});
+			})
+		);
+	} else {
+		event.respondWith(
+			caches.match(event.request).then(function (response) {
+				return response || fetch(event.request);
+			})
+		);
+	}
+});
 
-			console.log(
-				"ServiceWorker: Memuat aset dari server: ",
-				event.request.url
+self.addEventListener("activate", function (event) {
+	event.waitUntil(
+		caches.keys().then(function (cacheNames) {
+			return Promise.all(
+				cacheNames.map(function (cacheName) {
+					if (cacheName != CACHE_NAME) {
+						return caches.delete(cacheName);
+					}
+				})
 			);
-			return fetch(event.request);
 		})
 	);
 });
