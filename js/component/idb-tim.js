@@ -13,7 +13,7 @@ function bookmarkTeam(id) {
 				let tx = db.transaction("teams", "readwrite");
 				let store = tx.objectStore("teams");
 
-				store.add(team);
+				store.put(team);
 
 				return tx.complete;
 			});
@@ -117,7 +117,7 @@ function getFavoritesTeam() {
 					<div class="col s12 m6 l4">
 						<div class="card">
 							<div class="card-image team--logo valign-wrapper">
-								<img src="${team.crestUrl}" />
+								<img src="${team.crestUrl}" alt="Badge ${team.name}" />
 								<a class="btn-floating halfway-fab waves-effect waves-light red accent-3 saved" onclick="removeFaviriteTeam(${team.id})">
 									<i class="material-icons">bookmark</i>
 								</a>

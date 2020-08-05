@@ -36,7 +36,7 @@ function getTeams() {
 							<div class="col s12 m6 l4">
 								<div class="card">
 									<div class="card-image team--logo valign-wrapper">
-										<img src="${team.crestUrl}" />
+										<img src="${team.crestUrl}" alt="Badge ${team.name}" />
 										<div id="favorite-team-${team.id}">
 											<a class="btn-floating halfway-fab waves-effect waves-light red accent-3" onclick="bookmarkTeam(${team.id})">
 												<i class="material-icons">bookmark_border</i>
@@ -70,7 +70,7 @@ function getTeams() {
                     <div class="col s12 m6 l4">
                         <div class="card">
                             <div class="card-image team--logo valign-wrapper">
-								<img src="${team.crestUrl}" />
+								<img src="${team.crestUrl}" alt="Badge ${team.name}" />
 								<div id="favorite-team-${team.id}">
 									<a class="btn-floating halfway-fab waves-effect waves-light red accent-3" onclick="bookmarkTeam(${team.id})">
 										<i class="material-icons">bookmark_border</i>
