@@ -42,37 +42,11 @@ function requestPermission() {
 									),
 								})
 								.then(function (subscribe) {
-									console.log(
-										"Berhasil melakukan subscribe dengan endpoint: ",
-										subscribe.endpoint
-									);
-									console.log(
-										"Berhasil melakukan subscribe dengan p256dh key: ",
-										btoa(
-											String.fromCharCode.apply(
-												null,
-												new Uint8Array(
-													subscribe.getKey("p256dh")
-												)
-											)
-										)
-									);
-									console.log(
-										"Berhasil melakukan subscribe dengan auth key: ",
-										btoa(
-											String.fromCharCode.apply(
-												null,
-												new Uint8Array(
-													subscribe.getKey("auth")
-												)
-											)
-										)
-									);
+									console.log("Berhasil melakukan subscribe");
 								})
 								.catch(function (e) {
 									console.error(
-										"Tidak dapat melakukan subscribe ",
-										e.message
+										"Tidak dapat melakukan subscribe "
 									);
 								});
 						});
