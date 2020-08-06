@@ -1,79 +1,81 @@
-const CACHE_NAME = "piel-pwa-v1";
-let urlsToCache = [
-	"/",
-	"/css/materialize.min.css",
-	"/css/style.css",
-	"/fonts/Rancho-Regular.ttf",
-	"/images/icons/maskable-icon-96.png",
-	"/images/icons/maskable-icon-192.png",
-	"/images/icons/maskable-icon-512.png",
-	"/images/beranda.svg",
-	"/images/favicon.ico",
-	"/js/component/nav.js",
-	"/js/component/idb-tim.js",
-	"/js/materialize.min.js",
-	"/js/main.js",
-	"/js/api.js",
-	"/js/idb.js",
-	"/layouts/nav.html",
-	"/pages/beranda.html",
-	"/pages/tim.html",
-	"/pages/klasemen.html",
-	"pages/favorit.html",
-	"/index.html",
-	"/manifest.json",
+importScripts(
+	"https://storage.googleapis.com/workbox-cdn/releases/5.1.3/workbox-sw.js"
+);
+
+const PRECACHE_RESOURCES = [
+	{ url: "/", revision: "1" },
+	{ url: "/css/materialize.min.css", revision: "1" },
+	{ url: "/css/style.css", revision: "1" },
+	{ url: "/fonts/Rancho-Regular.ttf", revision: "1" },
+	{ url: "/images/icons/maskable-icon-96.png", revision: "1" },
+	{ url: "/images/icons/maskable-icon-192.png", revision: "1" },
+	{ url: "/images/icons/maskable-icon-512.png", revision: "1" },
+	{ url: "/images/beranda.svg", revision: "1" },
+	{ url: "/images/favicon.ico", revision: "1" },
+	{ url: "/js/component/nav.js", revision: "1" },
+	{ url: "/js/component/idb-tim.js", revision: "1" },
+	{ url: "/js/materialize.min.js", revision: "1" },
+	{ url: "/js/main.js", revision: "1" },
+	{ url: "/js/api.js", revision: "1" },
+	{ url: "/js/idb.js", revision: "1" },
+	{ url: "/layouts/nav.html", revision: "1" },
+	{ url: "/pages/beranda.html", revision: "1" },
+	{ url: "/pages/tim.html", revision: "1" },
+	{ url: "/pages/klasemen.html", revision: "1" },
+	{ url: "pages/favorit.html", revision: "1" },
+	{ url: "/index.html", revision: "1" },
+	{ url: "/manifest.json", revision: "1" },
 ];
 
-self.addEventListener("install", function (event) {
-	event.waitUntil(
-		caches.open(CACHE_NAME).then(function (cache) {
-			return cache.addAll(urlsToCache);
-		})
-	);
-});
+workbox.precaching.precacheAndRoute(PRECACHE_RESOURCES);
 
-self.addEventListener("fetch", function (event) {
-	let base_url = "https://api.football-data.org/v2/";
+workbox.routing.registerRoute(
+	new RegExp(/\.(?:png|gif|jpg|jpeg|svg|webp)$/),
+	new workbox.strategies.CacheFirst({
+		cacheName: "piel-cache-images",
+		plugins: [
+			new workbox.expiration.ExpirationPlugin({
+				maxAgeSeconds: 60 * 60 * 24 * 30,
+				maxEntries: 100,
+			}),
+		],
+	})
+);
 
-	if (event.request.url.indexOf(base_url) > -1) {
-		event.respondWith(
-			caches.open(CACHE_NAME).then(function (cache) {
-				return fetch(event.request).then(function (response) {
-					cache.put(event.request.url, response.clone());
-					return response;
-				});
-			})
-		);
-	} else {
-		event.respondWith(
-			caches.match(event.request).then(function (response) {
-				return response || fetch(event.request);
-			})
-		);
-	}
-});
+workbox.routing.registerRoute(
+	new RegExp("https://api.football-data.org/v2/"),
+	new workbox.strategies.StaleWhileRevalidate({
+		cacheName: "piel-cache-api",
+		plugins: [
+			new workbox.expiration.ExpirationPlugin({
+				maxAgeSeconds: 60 * 60,
+			}),
+		],
+	})
+);
 
-self.addEventListener("activate", function (event) {
-	event.waitUntil(
-		caches.keys().then(function (cacheNames) {
-			return Promise.all(
-				cacheNames.map(function (cacheName) {
-					if (cacheName != CACHE_NAME) {
-						return caches.delete(cacheName);
-					}
-				})
-			);
-		})
-	);
-});
+workbox.routing.registerRoute(
+	new RegExp("https://upload.wikimedia.org"),
+	new workbox.strategies.StaleWhileRevalidate({
+		cacheName: "piel-cache-crest",
+		plugins: [
+			new workbox.expiration.ExpirationPlugin({
+				maxAgeSeconds: 60 * 60 * 24 * 30,
+				maxEntries: 60,
+			}),
+		],
+	})
+);
 
 self.addEventListener("push", function (event) {
 	let body;
+
 	if (event.data) {
 		body = event.data.text();
 	} else {
 		body = "Push message no payload";
 	}
+
 	let options = {
 		body: body,
 		vibrate: [100, 50, 100],
@@ -82,6 +84,7 @@ self.addEventListener("push", function (event) {
 			primaryKey: 1,
 		},
 	};
+
 	event.waitUntil(
 		self.registration.showNotification("Push Notification", options)
 	);
