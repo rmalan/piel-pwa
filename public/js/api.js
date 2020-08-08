@@ -36,7 +36,7 @@ function getTeams() {
 							<div class="col s12 m6 l4">
 								<div class="card">
 									<div class="card-image team--logo valign-wrapper">
-										<img src="${team.crestUrl}" alt="Badge ${team.name}" />
+										<img src="${team.crestUrl}" alt="Badge ${team.name}" onerror="this.src='images/blank-badge.svg'" />
 										<div id="favorite-team-${team.id}">
 											<a class="btn-floating halfway-fab waves-effect waves-light red accent-3" onclick="bookmarkTeam(${team.id})">
 												<i class="material-icons">bookmark_border</i>
@@ -70,7 +70,7 @@ function getTeams() {
                     <div class="col s12 m6 l4">
                         <div class="card">
                             <div class="card-image team--logo valign-wrapper">
-								<img src="${team.crestUrl}" alt="Badge ${team.name}" />
+								<img src="${team.crestUrl}" alt="Badge ${team.name}" onerror="this.src='images/blank-badge.svg'" />
 								<div id="favorite-team-${team.id}">
 									<a class="btn-floating halfway-fab waves-effect waves-light red accent-3" onclick="bookmarkTeam(${team.id})">
 										<i class="material-icons">bookmark_border</i>
@@ -110,7 +110,7 @@ function getStandings() {
 						standings += `
 							<tr>
 								<td>${standing.position}</td>
-								<td><img src="${standing.team.crestUrl}" class="badge" alt="Badge ${standing.team.name}" /></td>
+								<td><img src="${standing.team.crestUrl}" class="badge" alt="Badge ${standing.team.name}" onerror="this.src='images/blank-badge.svg'" /></td>
 								<td>${standing.team.name}</td>
 								<td>${standing.playedGames}</td>
 								<td>${standing.won}</td>
@@ -147,7 +147,7 @@ function getStandings() {
 				standings += `
 					<tr>
 						<td>${standing.position}</td>
-						<td><img src="${standing.team.crestUrl}" class="badge" alt="Badge ${standing.team.name}" /></td>
+						<td><img src="${standing.team.crestUrl}" class="badge" alt="Badge ${standing.team.name}" onerror="this.src='images/blank-badge.svg'" /></td>
 						<td>${standing.team.name}</td>
 						<td>${standing.playedGames}</td>
 						<td>${standing.won}</td>

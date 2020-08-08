@@ -11,6 +11,7 @@ const PRECACHE_RESOURCES = [
 	{ url: "/images/icons/maskable-icon-192.png", revision: "1" },
 	{ url: "/images/icons/maskable-icon-512.png", revision: "1" },
 	{ url: "/images/beranda.svg", revision: "1" },
+	{ url: "/images/blank-badge.svg", revision: "1" },
 	{ url: "/images/favicon.ico", revision: "1" },
 	{ url: "/js/component/nav.js", revision: "1" },
 	{ url: "/js/component/idb-tim.js", revision: "1" },
