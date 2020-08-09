@@ -23,15 +23,18 @@ const PRECACHE_RESOURCES = [
 	{ url: "/pages/beranda.html", revision: "1" },
 	{ url: "/pages/tim.html", revision: "1" },
 	{ url: "/pages/klasemen.html", revision: "1" },
-	{ url: "pages/favorit.html", revision: "1" },
+	{ url: "/pages/favorit.html", revision: "1" },
 	{ url: "/index.html", revision: "1" },
 	{ url: "/manifest.json", revision: "1" },
 ];
 
-workbox.precaching.precacheAndRoute(PRECACHE_RESOURCES);
+workbox.precaching.precacheAndRoute(PRECACHE_RESOURCES, {
+	// Ignore all URL parameters.
+	ignoreURLParametersMatching: [/.*/],
+});
 
 workbox.routing.registerRoute(
-	new RegExp(/\.(?:png|gif|jpg|jpeg|svg|webp)$/),
+	/\.(?:png|gif|jpg|jpeg|svg)$/,
 	new workbox.strategies.CacheFirst({
 		cacheName: "piel-cache-images",
 		plugins: [
@@ -44,7 +47,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-	new RegExp("https://api.football-data.org/v2/"),
+	({ url }) => url.origin === "https://api.football-data.org",
 	new workbox.strategies.StaleWhileRevalidate({
 		cacheName: "piel-cache-api",
 		plugins: [
@@ -56,7 +59,7 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-	new RegExp("https://upload.wikimedia.org"),
+	({ url }) => url.origin === "https://upload.wikimedia.org",
 	new workbox.strategies.StaleWhileRevalidate({
 		cacheName: "piel-cache-crest",
 		plugins: [
