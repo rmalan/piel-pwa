@@ -79,8 +79,8 @@ function checkFavoriteTeam(id) {
 			return store.get(id);
 		})
 		.then(function (val) {
-			if (val != null && val.id == id) {
-				if (val.id == id) {
+			if (val != null && val.id === id) {
+				if (val.id === id) {
 					let favorite = document.getElementById(
 						"favorite-team-" + id
 					);
